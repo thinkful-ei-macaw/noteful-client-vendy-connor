@@ -56,9 +56,9 @@ class AddNote extends Component {
 		console.log(this.props)
 		// const folderId = this.props.id
 		const body = {
-			name: e.target.noteNameInput.value,
-			folderId: e.target.folder.value,
-			modified: Date.now(),
+			note_name: e.target.noteNameInput.value,
+			folder_id: e.target.folder.value,
+			modified: new Date(),
 			content: e.target.noteContent.value
 		};
 		console.log(body);
@@ -88,7 +88,7 @@ class AddNote extends Component {
 	render() {
 		let { folders = [] } = this.context;
 		let options = folders.map(folder => {
-			return <option value={folder.id}>{folder.name}</option>
+			return <option value={folder.id}>{folder.folder_name}</option>
 		})
 		return (
 			<div>

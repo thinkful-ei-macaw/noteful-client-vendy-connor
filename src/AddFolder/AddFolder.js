@@ -33,7 +33,7 @@ class AddFolder extends Component {
 	onAddFolder = e => {
 		e.preventDefault()
 		// const folderId = this.props.id
-		const body = { name: e.target.folderinput.value };
+		const body = { folder_name: e.target.folderinput.value };
 		console.log(body);
 		fetch(`${config.API_ENDPOINT}/folders`, {
 			method: 'POST',
